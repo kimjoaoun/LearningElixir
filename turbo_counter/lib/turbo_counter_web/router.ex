@@ -18,7 +18,7 @@ defmodule TurboCounterWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    live "/count", CountLive
+    live "/count", CountLive # CountLive Module as defined in count_live.ex
   end
 
   # Other scopes may use custom stacks.
