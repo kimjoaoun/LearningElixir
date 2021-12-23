@@ -9,7 +9,7 @@ defmodule BooksApi.Store.Book do
     field :description, :string
     field :isbn, :string
     field :price, :float
-    field :tite, :string
+    field :title, :string
 
     timestamps()
   end
@@ -17,8 +17,8 @@ defmodule BooksApi.Store.Book do
   @doc false
   def changeset(book, attrs) do
     book
-    |> cast(attrs, [:tite, :isbn, :description, :price, :authors])
-    |> validate_required([:tite, :isbn, :description, :price, :authors])
+    |> cast(attrs, [:title, :isbn, :description, :price, :authors])
+    |> validate_required([:title, :isbn, :description, :price, :authors])
     |> unique_constraint(:isbn)
   end
 end

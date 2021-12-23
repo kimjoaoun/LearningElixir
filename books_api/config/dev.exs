@@ -22,7 +22,7 @@ config :books_api, BooksApiWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "53riLxKvFqKWf9QzkEAwzVIVA/YVqSTmTNvIWoQqbz8DQXrP8WnMS3Via/c92sU1",
+  secret_key_base: "I0vP9KqUQGX13gdLnct848ep7raMHFMkj6RcQ9XEQ5BbkxzcTtstLogXrSp6sh/C",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}

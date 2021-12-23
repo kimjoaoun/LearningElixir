@@ -4,7 +4,7 @@ defmodule BooksApi.Repo.Migrations.CreateBooks do
   def change do
     create table(:books, primary_key: false) do
       add :id, :binary_id, primary_key: true
-      add :tite, :string
+      add :title, :string
       add :isbn, :text
       add :description, :text
       add :price, :float

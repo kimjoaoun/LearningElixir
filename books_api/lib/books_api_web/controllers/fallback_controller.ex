@@ -13,7 +13,7 @@ defmodule BooksApiWeb.FallbackController do
     |> put_view(BooksApiWeb.ErrorView)
     |> render(:"404")
   end
-
+  # This caluse will handle invalid resource data.
   def call(conn, {:error, %Ecto.Changeset{}}) do
     conn
     |> put_status(:unprocessable_entity)

@@ -16,7 +16,7 @@ config :books_api, BooksApiWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: BooksApiWeb.ErrorView, accepts: ~w(json), layout: false],
   pubsub_server: BooksApi.PubSub,
-  live_view: [signing_salt: "TvF2KIUp"]
+  live_view: [signing_salt: "/jv05pNy"]
 
 # Configures the mailer
 #

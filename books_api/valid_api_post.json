@@ -1,0 +1,9 @@
+{
+	"book": {
+		"title": "A Culpa é das Estrelas",
+		"isbn": "9780525478812",
+		"price": 29.99,
+		"description": "Um livro sobre coisas de adolescente ae bem legal mesmo, mas idk, poderia ser mais brabo",
+		"authors": ["John Green", "E outro neigro"]
+	}
+}

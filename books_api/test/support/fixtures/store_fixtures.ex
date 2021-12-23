@@ -20,7 +20,7 @@ defmodule BooksApi.StoreFixtures do
         description: "some description",
         isbn: unique_book_isbn(),
         price: 120.5,
-        tite: "some tite"
+        title: "some title"
       })
       |> BooksApi.Store.create_book()
 

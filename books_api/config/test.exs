@@ -17,7 +17,7 @@ config :books_api, BooksApi.Repo,
 # you can enable the server option below.
 config :books_api, BooksApiWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "Z98iXHDoy0XMkXkZ7rkcKcfQgNNxpoaOIYB8Tkj4a6YGU4HlXBaIWHYBRUOYjCrS",
+  secret_key_base: "khLnUB1AXIFYW1u1w6QblsEzPRianyJujYH7HaZ9NOu/apQH0ew/BSM3HmMmSb5J",
   server: false
 
 # In test we don't send emails.

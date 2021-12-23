@@ -7,7 +7,7 @@ defmodule BooksApiWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_books_api_key",
-    signing_salt: "y73sfXNT"
+    signing_salt: "yPyDJc2X"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
