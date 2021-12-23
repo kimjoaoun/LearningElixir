@@ -8,8 +8,6 @@ defmodule TurboCounterWeb.CountLive do
       :ok,
       socket
       |> new
-      |> add_counter
-      |> add_counter
     }
   end
 
@@ -17,16 +15,34 @@ defmodule TurboCounterWeb.CountLive do
     assign(socket, counters: Counters.new())
   end
 
-  defp add_counter(socket) do
+
+
+  defp inc(socket, counter) do
+    assign(socket, counters: Counters.inc(socket.assigns.counters, counter))
+  end
+
+  defp dec(socket, counter) do
+    assign(socket, counters: Counters.dec(socket.assigns.counters, counter))
+  end
+
+  defp clear(socket, counter) do
+    assign(socket, counters: Counters.clear(socket.assigns.counters, counter))
+  end
+
+  defp add(socket) do
     assign(
       socket,
       counters: Counters.add_counter(socket.assigns.counters)
     )
   end
 
-  defp count(socket, counter) do
-    assign(socket, counters: Counters.inc(socket.assigns.counters, counter))
-  end
+#  defp del(socket) do
+#    assign(socket, counters: Counters.remove_counter(socket.assigns.counters))
+#  end
+
+
+
+  # Renderer
 
   def render(assigns) do
     ~L"""
@@ -35,15 +51,34 @@ defmodule TurboCounterWeb.CountLive do
     <hr>
     <%= for {name, count} <- @counters do %>
     <p>
-      Counter<%= name %>: <%= count %>
+      Counter <%= name %>: <%= count %>
       <button phx-click="inc" phx-value-counter="<%= name %>">Increment</button>
+      | <button phx-click="dec" phx-value-counter="<%= name %>">Decrement</button>
+      | <button phx-click="clear" phx-value-counter="<%= name %>">Clear</button>
     </p>
     <% end %>
+    <button phx-click="add">Add Counter</button>
+
     """
   end
 
+
+  # Handlers
+
   def handle_event("inc", %{"counter" => counter}, socket) do
-    {:noreply, count(socket, counter)}
+    {:noreply, inc(socket, counter)}
+  end
+
+  def handle_event("dec", %{"counter" => counter}, socket) do
+    {:noreply, dec(socket, counter)}
+  end
+
+  def handle_event("clear", %{"counter" => counter}, socket) do
+    {:noreply, clear(socket, counter)}
+  end
+
+  def handle_event("add", _, socket) do
+    {:noreply, add(socket)}
   end
 
 end
